@@ -93,6 +93,10 @@ defmodule MyApp.AvroGenerated.Atp.Players.PlayerRegistered do
      }}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{
         "player_id" => player_id,
         "full_name" => full_name,

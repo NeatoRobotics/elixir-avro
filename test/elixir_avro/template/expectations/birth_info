@@ -40,6 +40,10 @@ defmodule Prefix.Atp.Players.Info.BirthInfo do
      }}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{"birthday" => birthday, "father" => father}) do
     {:ok,
      %__MODULE__{

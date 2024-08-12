@@ -48,6 +48,10 @@ defmodule MyApp.AvroGenerated.Atp.Players.Assistant do
      }}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{"assistant_id" => assistant_id, "trainer" => trainer, "players" => players}) do
     {:ok,
      %__MODULE__{

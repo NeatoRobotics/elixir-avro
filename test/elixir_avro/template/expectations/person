@@ -42,6 +42,10 @@ defmodule Prefix.Atp.Players.Info.Person do
      }}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{"fullname" => fullname, "age" => age}) do
     {:ok,
      %__MODULE__{

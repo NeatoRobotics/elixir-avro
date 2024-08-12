@@ -26,6 +26,10 @@ defmodule <%= template.name %> do
     {:ok, %{<%= ElixirAvro.Template.Renderer.fields_for_to_avro(template) %>}}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{<%= ElixirAvro.Template.Renderer.args_for_from_avro(template) %>}) do
     {:ok, %__MODULE__{ <%= ElixirAvro.Template.Renderer.fields_for_from_avro(template) %> }}
     rescue

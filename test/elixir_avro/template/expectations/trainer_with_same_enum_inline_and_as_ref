@@ -50,6 +50,10 @@ defmodule Prefix.Atp.Players.Trainer do
      }}
   end
 
+  def to_avro(_) do
+    {:error, :not_supported}
+  end
+
   def from_avro(%{"fullname" => fullname, "atp_level" => atp_level, "fit_level" => fit_level}) do
     {:ok,
      %__MODULE__{
